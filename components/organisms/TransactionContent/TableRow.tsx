@@ -54,7 +54,7 @@ export default function TableRow(props: TableRowProps) {
       </td>
       <td>
         <Link
-          href="/member/transactions-detail"
+          href="/member/transactions/detail"
           className="btn btn-status rounded-pill text-sm"
         >
           Details
