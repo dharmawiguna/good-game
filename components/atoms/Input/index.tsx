@@ -1,6 +1,4 @@
-import React from "react";
-
-interface InputProps {
+export interface InputProps {
   label: string;
 }
 export default function Input(props: InputProps) {
