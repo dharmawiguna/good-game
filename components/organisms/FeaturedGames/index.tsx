@@ -32,6 +32,7 @@ export default function FeaturedGame() {
                 title={item.name}
                 category={item.category.name}
                 thumbnail={`${API_IMAGE}/${item.thumbnail}`}
+                id={item._id}
               />
             );
           })}
