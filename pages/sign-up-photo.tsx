@@ -53,8 +53,8 @@ export default function SignUpPhoto() {
       toast.error(result.message);
     } else {
       toast.success("Register Succesfully!");
-      router.push("/sign-up-success");
       localStorage.removeItem("user-form");
+      setTimeout(() => router.push("/sign-up-success"), 2500);
     }
   };
   return (
