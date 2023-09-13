@@ -1,10 +1,10 @@
+import Cookies from "js-cookie";
 import Link from "next/link";
-import React, { useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { useRouter } from "next/router";
+import { useState } from "react";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { setSignIn } from "../../../services/auth";
-import { useRouter } from "next/router";
-import Cookies from "js-cookie";
 
 export default function SignInForm() {
   const [email, setEmail] = useState("");
@@ -99,7 +99,6 @@ export default function SignInForm() {
           Sign Up
         </Link>
       </div>
-      <ToastContainer />
     </>
   );
 }

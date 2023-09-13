@@ -24,6 +24,7 @@ export default function Detail() {
     setDataItem(data.data.detail);
     setNominals(data.data.detail.nominal);
     setPayments(data.data.payment);
+    localStorage.setItem("data-item", JSON.stringify(data.data.detail));
   }, []);
 
   useEffect(() => {

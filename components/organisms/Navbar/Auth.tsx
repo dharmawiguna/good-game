@@ -1,11 +1,10 @@
-import Link from "next/link";
-import { useEffect, useState } from "react";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import Cookies from "js-cookie";
 import jwtDecode from "jwt-decode";
-import { JwtPayloadTypes, UserTypes } from "../../../services/data-types";
+import Link from "next/link";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
+import { JwtPayloadTypes, UserTypes } from "../../../services/data-types";
 
 export default function Auth() {
   const router = useRouter();
@@ -89,7 +88,6 @@ export default function Auth() {
             </ul>
           </div>
         </li>
-        <ToastContainer />
       </>
     );
   }
@@ -104,7 +102,6 @@ export default function Auth() {
           Sign In
         </Link>
       </li>
-      <ToastContainer />
     </>
   );
 }

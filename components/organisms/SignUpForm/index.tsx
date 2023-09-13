@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from "react";
 import cx from "classnames";
 import { useRouter } from "next/router";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 
 export default function SignUpForm() {
   const [name, setName] = useState("");
@@ -109,7 +108,6 @@ export default function SignUpForm() {
           Sign In
         </a>
       </div>
-      <ToastContainer />
     </>
   );
 }
