@@ -4,6 +4,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { setSignIn } from "../../../services/auth";
 import { useRouter } from "next/router";
+// import jwt_decode from "jwt-decode";
+import Cookies from "js-cookie";
 
 export default function SignInForm() {
   const [email, setEmail] = useState("");
@@ -33,7 +35,13 @@ export default function SignInForm() {
         toast.error(response.message);
       } else {
         toast.success("Login Successfully!");
-        setTimeout(() => router.push("/"), 2500);
+        const { token } = response.data;
+        const tokenBase64 = btoa(token);
+        Cookies.set("token", tokenBase64, { expires: 1 });
+        // const user = jwt_decode(token);
+        // console.log(user, "user");
+
+        // setTimeout(() => router.push("/"), 2500);
       }
     }
   };
