@@ -19,7 +19,7 @@ export default function Detail() {
   const [nominals, setNominals] = useState([]);
   const [payments, setPayments] = useState([]);
 
-  const getVoucherDetailAPI = useCallback(async (id) => {
+  const getVoucherDetailAPI = useCallback(async (id: string) => {
     const data = await getDetailVoucher(id);
     console.log(data);
     setDataItem(data.detail);
@@ -29,7 +29,7 @@ export default function Detail() {
 
   useEffect(() => {
     if (isReady) {
-      getVoucherDetailAPI(query.id);
+      getVoucherDetailAPI(query.id as string);
     }
   }, [isReady]);
   return (
