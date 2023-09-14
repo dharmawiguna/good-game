@@ -17,6 +17,9 @@ interface DetailProps {
   payments: PaymentTypes[];
 }
 export default function Detail({ dataItem, nominals, payments }: DetailProps) {
+  useEffect(() => {
+    localStorage.setItem("data-item", JSON.stringify(dataItem));
+  }, []);
   return (
     <>
       <Navbar />
