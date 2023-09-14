@@ -7,6 +7,7 @@ import FeaturedGame from "../components/organisms/FeaturedGames";
 import Reached from "../components/organisms/Reached";
 import Story from "../components/organisms/Story";
 import Footer from "../components/organisms/Footer";
+import Head from "next/head";
 
 export default function Home() {
   useEffect(() => {
@@ -15,6 +16,13 @@ export default function Home() {
   return (
     <>
       {/* <!-- Navbar --> */}
+      <Head>
+        <title>Store GG by Dharma Wiguna</title>
+        <meta
+          name="description"
+          content="Kami menyediakan jutaan cara untuk membantu players menjadi pemenang sejati"
+        />
+      </Head>
       <Navbar />
       <MainBanner />
       <TransactionStep />
