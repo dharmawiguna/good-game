@@ -12,7 +12,7 @@ export default function CheckOutItem() {
   const img = process.env.NEXT_PUBLIC_IMAGE;
   useEffect(() => {
     const dataFromLocal = localStorage.getItem("data-item");
-    const dataItemLocal = JSON.parse(dataFromLocal);
+    const dataItemLocal = JSON.parse(dataFromLocal!);
     setDataItem(dataItemLocal);
   }, []);
   return (
