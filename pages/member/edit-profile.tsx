@@ -9,8 +9,15 @@ import { setUpdateProfile } from "../../services/member";
 import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
+interface UserStateProps {
+  id: string;
+  name: string;
+  email: string;
+  avatar: any;
+  image: any;
+}
 export default function EditProfile() {
-  const [user, setUser] = useState({
+  const [user, setUser] = useState<UserStateProps>({
     email: "",
     name: "",
     image: "",
@@ -20,7 +27,7 @@ export default function EditProfile() {
 
   const router = useRouter();
 
-  const [imagePreview, setImagePreview] = useState(null);
+  const [imagePreview, setImagePreview] = useState<any>(null);
   useEffect(() => {
     const token = Cookies.get("token");
     if (token) {
@@ -82,7 +89,7 @@ export default function EditProfile() {
                     name="avatar"
                     accept="image/png, image/jpeg"
                     onChange={(event) => {
-                      const img = event?.target?.files[0];
+                      const img = event?.target?.files![0];
                       setImagePreview(URL.createObjectURL(img));
                       setUser({ ...user, image: img });
                     }}

@@ -13,7 +13,7 @@ export default function SignUpForm() {
   };
   useEffect(() => {
     const userForm = localStorage.getItem("user-form");
-    const dataForm = JSON.parse(userForm);
+    const dataForm = JSON.parse(userForm!);
 
     if (userForm) {
       setName(dataForm.name);

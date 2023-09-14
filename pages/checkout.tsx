@@ -5,11 +5,7 @@ import CheckOutItem from "../components/organisms/CheckoutItem";
 import { JwtPayloadTypes, UserTypes } from "../services/data-types";
 import jwtDecode from "jwt-decode";
 
-interface CheckoutProps {
-  user: UserTypes;
-}
-export default function Checkout(props: CheckoutProps) {
-  const { user } = props;
+export default function Checkout() {
   return (
     <>
       <section className="checkout mx-auto pt-md-100 pb-md-145 pt-30 pb-30">
@@ -54,14 +50,7 @@ export async function getServerSideProps({ req }: GetServerSideProps) {
     };
   }
 
-  const jwtToken = Buffer.from(token, "base64").toString("ascii");
-  const payload: JwtPayloadTypes = jwtDecode(jwtToken);
-  const userPayload: UserTypes = payload.player;
-  const img = process.env.NEXT_PUBLIC_IMAGE;
-  userPayload.avatar = `${img}/${userPayload.avatar}`;
   return {
-    props: {
-      user: userPayload,
-    },
+    props: {},
   };
 }
