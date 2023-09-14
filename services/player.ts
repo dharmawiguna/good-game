@@ -1,4 +1,3 @@
-import axios from "axios";
 import callAPI from "../config/api";
 import { CheckoutTypes } from "./data-types";
 
@@ -23,9 +22,4 @@ export async function GetGameCategory() {
 export async function SetCheckout(data: CheckoutTypes) {
   const url = `${ROOT_API}/${API_VERSION}/players/checkout`;
   return callAPI({ url, method: "POST", data, token: true });
-}
-
-export async function GetMemberOverview() {
-  const url = `${ROOT_API}/${API_VERSION}/players/dashboard`;
-  return callAPI({ url, method: "GET", token: true });
 }

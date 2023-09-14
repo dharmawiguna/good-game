@@ -2,11 +2,11 @@ import { useEffect, useState } from "react";
 import Category from "./Category";
 import TableRow from "./TableRow";
 import { toast } from "react-toastify";
-import { GetMemberOverview } from "../../../services/player";
 import {
   HistoryTransactionTypes,
   TopupCategoryTypes,
 } from "../../../services/data-types";
+import { GetMemberOverview } from "../../../services/member";
 
 export default function OverviewContent() {
   const [count, setCount] = useState([]);
