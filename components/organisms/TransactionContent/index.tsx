@@ -94,6 +94,7 @@ export default function TransactionContent() {
               <tbody id="list_status_item">
                 {transactions.map((transaction: HistoryTransactionTypes) => (
                   <TableRow
+                    id={transaction._id}
                     title={transaction.historyVoucherTopup.gameName}
                     category={transaction.historyVoucherTopup.category}
                     item={transaction.historyVoucherTopup.gameName}
