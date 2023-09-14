@@ -45,7 +45,7 @@ export default async function callAPI({
     return res;
   }
 
-  const { length } = Object.keys(response.data);
+  const { length } = Object.keys(response?.data);
   const res = {
     error: false,
     message: "success",

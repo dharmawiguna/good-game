@@ -43,6 +43,7 @@ export interface UserTypes {
   email: string;
   username: string;
   avatar: string;
+  image: string;
 }
 
 export interface JwtPayloadTypes {
